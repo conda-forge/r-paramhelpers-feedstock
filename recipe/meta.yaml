@@ -1,4 +1,4 @@
-{% set version = '1.11' %}
+{% set version = "1.12" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ParamHelpers_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ParamHelpers/ParamHelpers_{{ version }}.tar.gz
-  sha256: 1614f4c0842cf822befc01228ab7263417f3423dd6a1dc24347b14f8491637a0
+  sha256: b54db9e6608ba530345c380c757a60cb2b78ab08992a890b1a41914ce7abcc14
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
