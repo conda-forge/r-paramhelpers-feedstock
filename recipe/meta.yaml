@@ -1,4 +1,4 @@
-{% set version = '1.13' %}
+{% set version = "1.14" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ParamHelpers_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ParamHelpers/ParamHelpers_{{ version }}.tar.gz
-  sha256: b9b5212a485f441504716fcddf4fd7376bf3b909aae049c7394245e853424e79
+  sha256: b17652d0a69de3241a69f20be4ad1bfe02c413328a17f3c1ac7b73886a6ba2eb
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -50,13 +50,11 @@ test:
 about:
   home: https://paramhelpers.mlr-org.com, https://github.com/mlr-org/ParamHelpers
   license: BSD_2_clause
-  summary: Functions for parameter descriptions and operations in black-box optimization, tuning
-    and machine learning. Parameters can be described (type, constraints, defaults,
-    etc.), combined to parameter sets and can in general be programmed on. A useful
-    OptPath object (archive) to log function evaluations is also provided.
+  summary: Functions for parameter descriptions and operations in black-box optimization, tuning and machine learning. Parameters can be described (type, constraints,
+    defaults, etc.), combined to parameter sets and can in general be programmed on. A useful OptPath object (archive) to log function evaluations is also provided.
   license_family: BSD
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_2_clause'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_2_clause
     - LICENSE
 
 extra:
