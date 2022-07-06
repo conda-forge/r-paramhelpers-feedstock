@@ -3,7 +3,7 @@ About r-paramhelpers
 
 Home: https://paramhelpers.mlr-org.com, https://github.com/mlr-org/ParamHelpers
 
-Package license: BSD_2_clause
+Package license: BSD-2-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-paramhelpers-feedstock/blob/main/LICENSE.txt)
 
