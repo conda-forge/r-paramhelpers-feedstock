@@ -1,6 +1,5 @@
 {% set version = "1.14.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-paramhelpers
@@ -13,8 +12,7 @@ source:
   sha256: 0450ff8489b0d4d0842130f6a9713ede97da936d7909c43d43587bf2d5a01a21
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,7 +25,9 @@ requirements:
     - r-fastmatch                # [build_platform != target_platform]
     - r-checkmate                # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -42,7 +42,6 @@ requirements:
     - r-fastmatch
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-bbmisc >=1.10
     - r-backports
     - r-checkmate >=1.8.2
