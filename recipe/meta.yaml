@@ -1,4 +1,4 @@
-{% set version = "1.14.1" %}
+{% set version = "1.14.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ParamHelpers_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ParamHelpers/ParamHelpers_{{ version }}.tar.gz
-  sha256: 0450ff8489b0d4d0842130f6a9713ede97da936d7909c43d43587bf2d5a01a21
+  sha256: ab6859b2d12fc10b09f316ea673b781c5f167eda86b19e423dd6fd4f97462375
 
 build:
-  number: 3
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
